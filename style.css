@@ -1,0 +1,812 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    #FFF8EC,
+    #F7E8CF,
+    #FFFDF8);
+
+    color:#46352A;
+
+    overflow-x:hidden;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+    max-width:1200px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 35px;
+
+    border-radius:18px;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.65);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.08);
+
+    z-index:999;
+}
+
+.logo{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:#4D3A2F;
+}
+
+nav{
+
+    display:flex;
+    gap:30px;
+
+    align-items:center;
+}
+
+nav a{
+
+    color:#4D3A2F;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#7BAE55;
+
+}
+
+.cart-link{
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    background:#7BAE55;
+
+    color:white;
+
+}
+
+.cart-link:hover{
+
+    background:#679246;
+
+    color:white;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+    padding:150px 10% 80px;
+}
+
+.hero-content{
+
+    flex:1;
+}
+
+.hero-content h1{
+
+    font-size:3.8rem;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+}
+
+.hero-content p{
+
+    font-size:1.15rem;
+
+    color:#6B5A50;
+
+    margin-bottom:40px;
+
+    max-width:550px;
+
+    line-height:1.8;
+}
+
+.hero-btn{
+
+    display:inline-block;
+
+    padding:18px 42px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #8BBF65,
+    #6F9D50);
+
+    transition:.35s;
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    text-align:center;
+}
+
+.hero-image img{
+
+    width:100%;
+    max-width:470px;
+
+    filter:drop-shadow(
+    0 35px 35px rgba(0,0,0,.18));
+
+    transition:.45s;
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.05) rotate(-2deg);
+
+}
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    padding:100px 10%;
+}
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.12);
+
+}
+
+.about-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.about-text h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:25px;
+}
+
+.about-text p{
+
+    line-height:2;
+
+    color:#5B4C44;
+}
+
+/* ==========================
+   WHY
+========================== */
+
+.why{
+
+    padding:100px 10%;
+
+    text-align:center;
+}
+
+.why h2{
+
+    font-size:2.4rem;
+
+    margin-bottom:50px;
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+}
+
+.why-card{
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    transition:.4s;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.08);
+}
+
+.why-card:hover{
+
+    transform:
+    translateY(-12px);
+
+    box-shadow:
+    0 30px 45px rgba(0,0,0,.14);
+}
+
+.why-card{
+
+    .why-card{
+
+    font-size:1rem;
+
+    line-height:1.7;
+}
+
+.why-card h3{
+
+    font-size:1.35rem;
+
+    margin:15px 0;
+}
+
+.why-card p{
+
+    font-size:.95rem;
+
+    color:#666;
+}
+}
+
+.why-card h3{
+
+    margin:18px 0;
+}
+
+/* ==========================
+   PRODUCT
+========================== */
+
+.product{
+
+    padding:110px 10%;
+}
+
+.product h2{
+
+    text-align:center;
+
+    font-size:2.6rem;
+
+    margin-bottom:60px;
+}
+
+.product-card{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    background:white;
+
+    border-radius:35px;
+
+    padding:40px;
+
+    box-shadow:
+    0 25px 55px rgba(0,0,0,.10);
+}
+
+.product-image{
+
+    text-align:center;
+}
+
+.product-image img{
+
+    width:100%;
+    max-width:360px;
+
+    transition:.45s;
+}
+
+.product-image img:hover{
+
+    transform:
+    scale(1.07)
+    rotate(3deg);
+
+}
+
+.product-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.product-info h2{
+
+    text-align:left;
+
+    margin-bottom:10px;
+}
+
+.price{
+
+    font-size:2rem;
+
+    color:#7BAE55;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+}
+
+.product-info button{
+
+    margin-top:35px;
+
+    width:220px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #8BBF65,
+    #6D9A4B);
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.product-info button:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.18);
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    margin-top:100px;
+
+    background:#4A3A2E;
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 20px;
+}
+
+footer h2{
+
+    margin-bottom:20px;
+}
+
+footer p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:2;
+}
+
+.checkout-btn{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:18px 42px;
+
+    border-radius:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:#7BAE55;
+
+    transition:.3s;
+}
+
+.checkout-btn:hover{
+
+    background:#679246;
+
+    transform:translateY(-5px);
+}
+
+/* ==========================
+   SECRET BUTTON
+========================== */
+
+.secret-btn{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    text-align:center;
+
+    line-height:38px;
+
+    color:white;
+
+    background:rgba(0,0,0,.18);
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.secret-btn:hover{
+
+    background:#444;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.hero{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+}
+
+.hero-content p{
+
+    margin:auto auto 35px;
+}
+
+.about{
+
+    grid-template-columns:1fr;
+
+}
+
+.product-card{
+
+    grid-template-columns:1fr;
+
+}
+
+.product-info{
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.product-info h2{
+
+    text-align:center;
+}
+
+nav{
+
+    gap:15px;
+}
+
+.hero-content h1{
+
+    font-size:2.6rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:20px;
+}
+
+.hero{
+
+    padding-top:180px;
+}
+
+}
+
+/* ===========================
+   SCROLL ANIMATION
+=========================== */
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:
+opacity .9s ease,
+transform .9s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/* ===========================
+   TOAST
+=========================== */
+
+.toast{
+
+position:fixed;
+
+top:30px;
+
+right:-300px;
+
+background:#7BAE55;
+
+color:white;
+
+padding:18px 28px;
+
+border-radius:15px;
+
+font-weight:600;
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.18);
+
+transition:.5s;
+
+z-index:99999;
+
+}
+
+.toast.show{
+
+right:30px;
+
+}
+
+
+/* ===========================
+   RIPPLE
+=========================== */
+
+button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(255,255,255,.5);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/* ==========================
+   CART PAGE
+========================== */
+
+.container{
+
+    max-width:900px;
+
+    margin:140px auto;
+
+    padding:40px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.1);
+
+}
+
+#cart-list{
+
+    margin-top:40px;
+
+}
+
+.item-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:20px 0;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#FFF8EC;
+
+}
+
+.item-row span{
+
+    font-weight:500;
+
+}
+
+.item-row button{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    margin-left:10px;
+
+    font-size:1.1rem;
+
+    background:#7BAE55;
+
+    color:white;
+
+}
+
+#total{
+
+    margin-top:35px;
+
+    font-size:2rem;
+
+    color:#5D4037;
+
+}

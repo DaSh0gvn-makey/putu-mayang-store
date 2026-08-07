@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <h2>Toko Larpish</h2>
+</div>
+
+<div id="sideMenu" class="side-menu">
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+</div>
+
+<div class="container">
+    <h2>Your Cart</h2>
+
+    <div id="cart-list"></div>
+
+    <h3 id="total"></h3>
+
+    <button class="checkout-btn" onclick="checkout()">Checkout via WhatsApp</button>
+</div>
+
+<audio id="bgm" loop muted>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()" class="btn">
+    Play Music 🎵
+</button>
+
+<script>
+const products = {
+    1:{nama:"Putu Mayang", harga:5000}
+};
+
+function loadCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    let container = document.getElementById("cart-list");
+    let total = 0;
+
+    container.innerHTML = "";
+
+    for(let id in cart){
+        let qty = cart[id];
+        let p = products[id];
+        let subtotal = p.harga * qty;
+        total += subtotal;
+
+        container.innerHTML += `
+        <div class="item-row">
+            <span>${p.nama} (x${qty}) - Rp ${subtotal}</span>
+            <div>
+                <button onclick="changeQty(${id}, -1)">−</button>
+                <button onclick="changeQty(${id}, 1)">+</button>
+            </div>
+        </div>`;
+    }
+
+    document.getElementById("total").innerText = "Total: Rp " + total;
+}
+
+function changeQty(id, change){
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    cart[id] += change;
+
+    if(cart[id] <= 0){
+        delete cart[id];
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+function checkout(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    let message = "Halo! Saya ingin memesan:\n\n";
+
+    for(let id in cart){
+        let p = products[id];
+        message += `- ${p.nama} x${cart[id]}\n`;
+    }
+
+    let url = "https://wa.me/6288212326842?text=" + encodeURIComponent(message);
+
+    localStorage.removeItem("cart");
+    window.open(url, "_blank");
+}
+
+loadCart();
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

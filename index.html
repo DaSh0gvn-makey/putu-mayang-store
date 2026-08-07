@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Putu Mayang | Muhammad Arif Budiyono</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+🍃 Putu Mayang
+</div>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#product">Product</a>
+
+<a href="cart.html" class="cart-link">
+🛒 Cart
+</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Traditional Sweetness,
+<br>
+Modern Happiness.
+</h1>
+
+<p>
+
+Nikmati kelembutan Putu Mayang dengan cita rasa autentik,
+dibuat menggunakan bahan pilihan dan resep tradisional.
+
+</p>
+
+<a href="#product" class="hero-btn">
+
+Explore Menu
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="gambar/PMayangg.png">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="about-image">
+
+<img src="gambar/PMayangg.png">
+
+</div>
+
+<div class="about-text">
+
+<h2>
+
+About Putu Mayang
+
+</h2>
+
+<p>
+
+Putu Mayang merupakan salah satu jajanan tradisional Indonesia yang terkenal
+dengan teksturnya yang lembut, kenyal, dan cita rasa manis yang khas.
+
+Produk kami dibuat menggunakan bahan berkualitas agar tetap mempertahankan
+keaslian rasa sekaligus memberikan pengalaman menikmati jajanan tradisional
+yang lebih modern.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- WHY US -->
+
+<section class="why">
+
+<h2>
+
+Why Choose Our Product?
+
+</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+🍃
+
+<h3>
+
+Fresh Ingredients
+
+</h3>
+
+<p>
+
+Menggunakan bahan segar setiap hari.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+🥥
+
+<h3>
+
+Traditional Recipe
+
+</h3>
+
+<p>
+
+Resep turun-temurun yang autentik.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+✨
+
+<h3>
+
+Affordable
+
+</h3>
+
+<p>
+
+Nikmat tanpa menguras dompet.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+❤️
+
+<h3>
+
+Made with Care
+
+</h3>
+
+<p>
+
+Dibuat dengan kualitas dan kebersihan terbaik.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCT -->
+
+<section id="product" class="product">
+
+<h2>
+
+Featured Product
+
+</h2>
+
+<div id="product-list">
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+
+Thank You!
+
+</h2>
+
+<p>
+
+Terima kasih telah mengunjungi website kami.
+
+Semoga Putu Mayang kami dapat menjadi pilihan jajanan favorit Anda.
+
+</p>
+
+<a href="cart.html" class="checkout-btn">
+
+View Cart
+
+</a>
+
+</footer>
+
+<!-- MUSIC -->
+
+<audio id="bgm" loop muted>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- PRODUCT SCRIPT -->
+
+<script>
+
+const products = [
+
+{
+
+id:1,
+
+nama:"Putu Mayang",
+
+harga:5000,
+
+gambar:"PMayangg.png"
+
+}
+
+];
+
+const container = document.getElementById("product-list");
+
+products.forEach(p=>{
+
+container.innerHTML += `
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="gambar/${p.gambar}">
+
+</div>
+
+<div class="product-info">
+
+<h2>${p.nama}</h2>
+
+<p class="price">
+
+Rp ${p.harga.toLocaleString("id-ID")}
+
+</p>
+
+<p>
+
+Lembut, manis, dan dibuat menggunakan resep tradisional.
+
+</p>
+
+<button onclick="addToCart(${p.id})">
+
+🛒 Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+function addToCart(id){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+cart[id] = (cart[id] || 0) + 1;
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+alert("Produk berhasil ditambahkan!");
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+<a href="secret.html" class="secret-btn">?</a>
+
+</body>
+</html>
